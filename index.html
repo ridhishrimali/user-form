@@ -28,44 +28,83 @@
     ></script>
   </head>
   <body>
-    <div class="p-5">
-      <h3 class="text-center">User Form</h3>
-      <form>
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="Enter email"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            placeholder="Password"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="file">Resume</label>
-          <input
-            type="file"
-            class="form-control"
-            id="file"
-            placeholder="file"
-            accept="application/msword,.xls,.txt,.pdf,image/*"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary" onclick="submitHandler()">
-          Submit
-        </button>
-
-        <script src="index.js"></script>
-      </form>
+    <div class="p-5 text-center">
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        Click here to select files
+      </button>
     </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">File Selection</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="file" class="text-uppercase"
+                  >Signle file select</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="singleFile"
+                  placeholder="file"
+                  accept="application/msword,.xls,.txt,.pdf,image/*"
+                />
+              </div>
+              <div id="singleFileName" class="text-primary"></div>
+              <br />
+              <div class="form-group">
+                <label for="file" class="text-uppercase"
+                  >Multiple file select</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="multiFile"
+                  placeholder="file"
+                  multiple
+                  accept="application/msword,.xls,.txt,.pdf,image/*"
+                />
+              </div>
+              <div id="multiFileName" class="text-primary"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
